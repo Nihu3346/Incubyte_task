@@ -24,4 +24,10 @@ public class CalculatorTest {
         assertEquals(3,Calculator.addittion("1,2"));
     }
 
+    @Test
+    //For Multivalues separated by comma
+    public void TestCase_4_ReturnSumOfMultipleValuesIfCommaFound()
+    {
+        assertEquals(6,Calculator.addittion("1,2,3"));
+    }
 }

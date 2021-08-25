@@ -2,8 +2,6 @@ package Caclulator;
 
 public class Calculator {
 
-    //The method can take up to two numbers, separated by commas, and will return their sum.
-
     public static int addittion(String s) {
         if(s.equals(""))
         {
@@ -15,7 +13,7 @@ public class Calculator {
             //If String contains ',' separated values like "1,2"
 
             String[] numbers = s.split(",");
-            return Integer.parseInt(numbers[0]) + Integer.parseInt(numbers[1]);
+            return summation(numbers);
         }
         else
         {
@@ -23,5 +21,15 @@ public class Calculator {
             return Integer.parseInt(s);
         }
 
+    }
+
+    private static int summation(String[] numbers)
+    {
+        int sum = 0;
+        for(String i: numbers)
+        {
+            sum = sum + Integer.parseInt(i);
+        }
+        return sum;
     }
 }
