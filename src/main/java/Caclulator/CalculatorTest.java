@@ -3,10 +3,6 @@ package Caclulator;
 import org.junit.*;
 import static org.junit.Assert.*;
 
-/*
-Testcase 2: The method can take up to two numbers, separated by commas, and will return their sum.
-*/
-
 public class CalculatorTest {
     @Test
     //for empty strings like ""
@@ -20,4 +16,12 @@ public class CalculatorTest {
     {
         assertEquals(1,Calculator.addittion("1"));
     }
+
+    @Test
+    //For strings which contains numbers separated by ','
+    public void TestCase_3_ReturnSumIfCommaFound()
+    {
+        assertEquals(3,Calculator.addittion("1,2"));
+    }
+
 }
