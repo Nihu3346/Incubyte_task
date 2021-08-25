@@ -45,4 +45,18 @@ public class CalculatorTest {
         assertEquals(6,Calculator.addittion("//#\n1#2#3"));
         assertEquals(9,Calculator.addittion("//;\n4;4;1"));
     }
+
+    @Test
+    //Exception Message For Negative Numbers
+    public void TestCase_7_NegativeNumberException()
+    {
+        try{
+                Calculator.addittion("-5,6,9,-10,5,6");
+                fail("Exception expected");
+        }
+        catch(RuntimeException ex)
+        {
+            assertEquals("Negatives not allowed: [-5, -10]", ex.getMessage());
+        }
+    }
 }
