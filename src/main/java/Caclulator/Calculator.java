@@ -36,6 +36,20 @@ public class Calculator {
                 //If String contains ',' separated values like "1,2"
                 numbers = s.split("[,\n]");
             }
+            if(s.charAt(0) == '/' && s.charAt(1) == '/' &&  s.charAt(2)=='[')
+            {
+                int idx = s.indexOf('\n');
+                String substr = s.substring(idx+1);
+                String sig;
+                String st = "\\";
+                for (int i=3;i<idx-1;i++)
+                {
+                    st += s.charAt(i);
+                    st += "\\";
+                }
+                sig =  st.substring(0,st.length()-1);
+                numbers = substr.split(sig);
+            }
             List<Integer> list= checkNegativity(numbers);
             if(!list.isEmpty())
             {

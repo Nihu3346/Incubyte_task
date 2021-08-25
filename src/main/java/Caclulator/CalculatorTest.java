@@ -66,4 +66,12 @@ public class CalculatorTest {
     {
         assertEquals(5,Calculator.addittion("2,1000,3"));
     }
+
+    @Test
+    // Delimiters can be of any length with the following format: “//[delimiter]\n”
+    public void TestCase_9_CheckingForDelimiterOfAnyLength()
+    {
+        assertEquals(6,Calculator.addittion("//[***]\n1***2***3"));
+    }
+
 }
