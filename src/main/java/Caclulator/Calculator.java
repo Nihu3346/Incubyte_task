@@ -8,11 +8,11 @@ public class Calculator {
             //If string is empty return 0;
             return 0;
         }
-        else if(s.indexOf(',') != -1)
+        else if(s.indexOf(',') != -1 || s.indexOf('\n') != -1 )
         {
             //If String contains ',' separated values like "1,2"
 
-            String[] numbers = s.split(",");
+            String[] numbers = s.split("[,\n]");
             return summation(numbers);
         }
         else

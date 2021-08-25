@@ -30,4 +30,11 @@ public class CalculatorTest {
     {
         assertEquals(6,Calculator.addittion("1,2,3"));
     }
+
+    @Test
+    //sum of multivalues separated by new line character
+    public void TestCase_5_SumOfMultivalueSeparatedByNewLineCharacter()
+    {
+        assertEquals(6,Calculator.addittion("1\n2,3"));
+    }
 }
