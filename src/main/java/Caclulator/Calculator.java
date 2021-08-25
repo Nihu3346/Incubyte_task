@@ -51,7 +51,7 @@ public class Calculator {
         int sum = 0;
         for(String i: numbers)
         {
-            sum = sum + Integer.parseInt(i);
+            sum = sum + ( Integer.parseInt(i)>=1000 ? 0 : Integer.parseInt(i) );
         }
         return sum;
     }

@@ -59,4 +59,11 @@ public class CalculatorTest {
             assertEquals("Negatives not allowed: [-5, -10]", ex.getMessage());
         }
     }
+
+    @Test
+    //Numbers bigger than 1000 should be ignored, so adding 2 + 1001 = 2
+    public void TestCase_8_NumberGreaterThanThousandsIgnored()
+    {
+        assertEquals(5,Calculator.addittion("2,1000,3"));
+    }
 }
