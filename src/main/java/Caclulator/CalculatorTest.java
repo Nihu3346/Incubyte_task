@@ -33,8 +33,16 @@ public class CalculatorTest {
 
     @Test
     //sum of multivalues separated by new line character
-    public void TestCase_5_SumOfMultivalueSeparatedByNewLineCharacter()
+    public void TestCase_5_SumOfMultivaluesSeparatedByNewLineCharacter()
     {
         assertEquals(6,Calculator.addittion("1\n2,3"));
+    }
+
+    @Test
+    //Sum of multivalues separated by given delimiter
+    public void TestCase_6_SumOfMultivaluesSeparatedByGivenDelimiter()
+    {
+        assertEquals(6,Calculator.addittion("//#\n1#2#3"));
+        assertEquals(9,Calculator.addittion("//;\n4;4;1"));
     }
 }
