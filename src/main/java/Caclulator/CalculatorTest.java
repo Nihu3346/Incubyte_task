@@ -74,4 +74,12 @@ public class CalculatorTest {
         assertEquals(6,Calculator.addittion("//[***]\n1***2***3"));
     }
 
+    @Test
+    //Allow multiple delimiters like this: “//[delim1][delim2]\n”
+    public void TestCase_10_CheckingForMultipleDelimiter()
+    {
+        assertEquals(6,Calculator.addittion("//[*][%]\n1*2%3"));
+        assertEquals(15,Calculator.addittion("//[*][%][#]\n1*2%3#4%5"));
+    }
+
 }

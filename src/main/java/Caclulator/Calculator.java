@@ -38,17 +38,30 @@ public class Calculator {
             }
             if(s.charAt(0) == '/' && s.charAt(1) == '/' &&  s.charAt(2)=='[')
             {
+                int occur = countO(s,"[");
                 int idx = s.indexOf('\n');
                 String substr = s.substring(idx+1);
-                String sig;
-                String st = "\\";
-                for (int i=3;i<idx-1;i++)
+                if(occur == 1)
                 {
-                    st += s.charAt(i);
-                    st += "\\";
+                    String st = "\\";
+                    for (int i=3;i<idx-1;i++)
+                    {
+                        st += s.charAt(i);
+                        st += "\\";
+                    }
+                    String sig =  st.substring(0,st.length()-1);
+                    numbers = substr.split(sig);
                 }
-                sig =  st.substring(0,st.length()-1);
-                numbers = substr.split(sig);
+                else
+                {
+                    String deli = "[";
+                    for(int i=3;i<idx;i=i+3)
+                    {
+                        deli += String.valueOf(s.charAt(i));
+                    }
+                    deli = deli + "]";
+                    numbers = substr.split(deli);
+                }
             }
             List<Integer> list= checkNegativity(numbers);
             if(!list.isEmpty())
@@ -81,4 +94,8 @@ public class Calculator {
         }
         return list;
     }
+    private static int countO(String str, String target) {
+        return (str.length() - str.replace(target, "").length()) / target.length();
+    }
+
 }
